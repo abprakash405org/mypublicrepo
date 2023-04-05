@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        token: [token1, token2, etc...]
+        token: [token1]
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your j ob can access it
       - uses: actions/checkout@v3
@@ -19,5 +19,4 @@ jobs:
         run: |
           echo "Add other actions to build, ${{ github.event.head_commit.message }}"
           echo " event repo name ${{ github.event.repository.name }} "
-          echo " toJson print: ${{ toJson(github) }} "
-          echo " ${{ github.event.commits.message }} "
+
