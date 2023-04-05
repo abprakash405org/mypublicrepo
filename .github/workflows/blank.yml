@@ -20,3 +20,4 @@ jobs:
           echo "Add other actions to build, ${{ github.event.head_commit.message }}"
           echo " event repo name ${{ github.event.repository.name }} "
           echo " toJson print: ${{ toJson(github) }} "
+          echo " ${{ github.event.commits.message }} "
