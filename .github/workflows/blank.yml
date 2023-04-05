@@ -7,14 +7,15 @@ jobs:
       matrix:
         token: [token1, token2, etc...]
     steps:
-    - uses: actions/checkout@v1
-    - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
-      with:
-        java-version: 1.8
-    - name: "load configuration"
-      run: echo "configuration=$conf" >> ./conf
-      env:
-        conf: ${{ matrix.token }}
-    - name: "integration tests"
-      run: "mvn -B integration-test"
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo "Add other actions to build, ${{ github.event.head_commit.message }}"
+          echo test, and deploy your project.
