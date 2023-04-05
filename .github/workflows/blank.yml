@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        token: [token1]
+        token: [token1, token2]
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your j ob can access it
       - uses: actions/checkout@v3
